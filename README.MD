@@ -6,7 +6,7 @@ Navigate to project folder, then run to install and run application:
 
 ```
 yarn install
-yarn start
+yarn run build && yarn start
 ```
 
 ## Live Demo
