@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { deletePost } from '../store/actions/postActions';
+import { withRouter } from 'next/router';
 
 const PostDiv = styled.div`
     border-bottom: 1px solid;
@@ -86,14 +87,13 @@ const Comment: FC<IComment> = ({ body }) => {
     return <CommentDiv>{body}</CommentDiv>;
 };
 
-const PostComponent: FC<IPost> = ({ id, title, body, comments }) => {
+const PostComponent: FC<IPost> = ({ id, title, body, comments, router }) => {
     const dispatch = useDispatch();
 
     const deletePostHandler = () => {
-        if (confirm("Deleting post: This can't be undone (Redirect/Update page currently not working")) {
+        if (confirm("Deleting post: This can't be undone")) {
             dispatch(deletePost(String(id)));
-            //    Here must be redirect/Update page
-            //    somehow need withRouter to work with next/router
+            router.push('/');
         }
     };
 
@@ -121,4 +121,4 @@ const PostComponent: FC<IPost> = ({ id, title, body, comments }) => {
     );
 };
 
-export default PostComponent;
+export default withRouter(PostComponent);
