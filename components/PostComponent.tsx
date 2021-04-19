@@ -90,10 +90,11 @@ const Comment: FC<IComment> = ({ body }) => {
 const PostComponent: FC<IPost> = ({ id, title, body, comments, router }) => {
     const dispatch = useDispatch();
 
-    const deletePostHandler = () => {
+    const deletePostHandler = async () => {
         if (confirm("Deleting post: This can't be undone")) {
-            dispatch(deletePost(String(id)));
-            router.push('/');
+            await dispatch(deletePost(String(id)));
+
+            router.pathname == '/' ? router.reload() : router.push('/');
         }
     };
 
