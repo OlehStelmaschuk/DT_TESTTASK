@@ -11,4 +11,4 @@ yarn run build && yarn start
 
 ## Live Demo
 
-https://607ca0570074378b016d2329--compassionate-ride-130442.netlify.app/
+https://607d546e007437dc606d2711--admiring-sinoussi-36c114.netlify.app/
