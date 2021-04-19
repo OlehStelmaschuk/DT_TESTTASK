@@ -1,9 +1,10 @@
+import { RouterState } from 'react-router-redux';
 export interface IPost {
     id: number;
     title: string;
     body: string;
     comments?: any;
-    router: any; // Don't good option
+    router: RouterState;
 }
 
 export interface IComment {
