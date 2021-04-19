@@ -3,7 +3,7 @@ export interface IPost {
     title: string;
     body: string;
     comments?: any;
-    router: any; // Don't good option
+    router: any; // ?;
 }
 
 export interface IComment {
